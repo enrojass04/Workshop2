@@ -51,6 +51,28 @@
               <fieldset>
                 <legend class="h2 text-center">Calculadora de Calorías</legend>
                 <div class="mb-3">
+                  <label for="nombre" class="form-label h6">Nombre</label>
+                  <input type="text" id="nombre" class="form-control" placeholder="Digíte su nombre">
+                </div>
+
+                <div class="d-flex">
+                  <div class="mb-3 w-100">
+                    <label for="documento" class="form-label h6">Tipo de documento</label>
+                    <select id="documento" class="form-select">
+                      <option></option>
+                      <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                      <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                      <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                    </select>
+                  </div>
+  
+                  <div class="mb-3 ms-5 w-100">
+                    <label for="numero-documento" class="form-label h6">Número de Documento</label>
+                    <input type="number" id="numero-documento" class="form-control" placeholder="Digíte su número de identidad">
+                  </div>
+                </div>
+
+                <div class="mb-3">
                   <label for="edad" class="form-label h6">Edad</label>
                   <input type="number" id="edad" class="form-control" min="15" max="80" placeholder="Digíte su edad">
                 </div>
@@ -77,20 +99,22 @@
                   </select>
                 </div>
                 
-                <section class="row m-2 h-100">
+                <section class="row m-2 h-100 ">
                   <span class="h6 p-0">Sexo</span>
-                  <div class="form-check">
-                    <input class="form-check-input" value="F" type="radio" name="genero" id="femenino" checked>
-                    <label class="form-check-label" for="femenino">
-                      Femenino
-                    </label>
-                  </div>
-
-                  <div class="form-check">
-                    <input class="form-check-input" value="M" type="radio" name="genero" id="masculino">
-                    <label class="form-check-label" for="masculino">
-                      Masculino
-                    </label>
+                  <div class="d-flex">
+                    <div class="form-check">
+                      <input class="form-check-input" value="F" type="radio" name="genero" id="femenino" checked>
+                      <label class="form-check-label" for="femenino">
+                        Femenino
+                      </label>
+                    </div>
+  
+                    <div class="form-check ms-5">
+                      <input class="form-check-input" value="M" type="radio" name="genero" id="masculino">
+                      <label class="form-check-label" for="masculino">
+                        Masculino
+                      </label>
+                    </div>
                   </div>
                 </section>
                 <hr>
