@@ -15,18 +15,7 @@ form.addEventListener("submit", e => {
 function calcularCalorias() {
     const { nombre, documento, numeroDocumento, edad, peso, altura, actividad, genero } = obtenerCampos();
     
-    if (!nombre.trim() || !numeroDocumento.trim() || !edad || !peso || !altura) {
-        mostrarMensajeDeError('Todos los campos son obligatorios');
-        return;
-    } 
-
-    if (edad < 15 || edad > 80) {
-        mostrarMensajeDeError('La edad debe estar entre 15 y 80');
-        return;
-    }
-
-    if (numeroDocumento.length < 7) {
-        mostrarMensajeDeError('Documento no es valido, debe tener mínimo 7 números');
+    if (!validarCampos(nombre, numeroDocumento, edad, peso, altura)) {
         return;
     }
 
@@ -48,6 +37,25 @@ function obtenerCampos() {
         actividad: parseFloat(document.querySelector('#actividad').value),
         genero: document.querySelector('input[name="genero"]:checked').value,
     };
+}
+
+function validarCampos(nombre, numeroDocumento, edad, peso, altura) {
+    if (!nombre.trim() || !numeroDocumento.trim() || !edad || !peso || !altura) {
+        mostrarMensajeDeError('Todos los campos son obligatorios');
+        return false;
+    } 
+
+    if (edad < 15 || edad > 80) {
+        mostrarMensajeDeError('La edad debe estar entre 15 y 80');
+        return false;
+    }
+
+    if (numeroDocumento.length < 7) {
+        mostrarMensajeDeError('Documento no es valido, debe tener mínimo 7 números');
+        return false;
+    }
+
+    return true;
 }
 
 function calcularValorCalorias(actividad, genero, peso, altura, edad) {
