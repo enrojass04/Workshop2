@@ -19,3 +19,16 @@ el paciente dependiendo de su edad:
     - Entre 15 y 29 años: Joven.
     - Entre 30 y 59 años: adultos.
     - Entre 60 años en adelante: adultos mayores.
+
+# Calculadora de Calorías
+
+Este es un proyecto de una calculadora de calorías desarrollada con JavaScript, HTML y CSS. La calculadora permite a los usuarios determinar las calorías necesarias para mantener, perder o ganar peso según su información personal y sus objetivos de salud.
+
+
+## Integrantes 
+
+Los integrantes del Proyecto son:
+
+- Joan Manuel Chicangana Mahecha
+- Jesus Alejandro Lora Tovar
+- Edwin Rojas Suárez

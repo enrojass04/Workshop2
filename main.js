@@ -19,10 +19,11 @@ function calcularCalorias() {
         return;
     }
 
-    const calcluloCalorias = calcularValorCalorias(actividad, genero, peso, altura, edad);
+    const calcluloCalorias = calcularValorCalorias(actividad, genero, peso, altura, edad).toFixed(2);
     const grupoPoblacional = validarGrupoPoblacional(edad);
 
     mostrarResultado(nombre, documento, numeroDocumento, calcluloCalorias, grupoPoblacional);
+    limpiarCampos();
 }
 
 
@@ -37,6 +38,18 @@ function obtenerCampos() {
         actividad: parseFloat(document.querySelector('#actividad').value),
         genero: document.querySelector('input[name="genero"]:checked').value,
     };
+
+}
+
+function limpiarCampos() {
+    document.querySelector('#nombre').value = '';
+    document.querySelector('#documento').value = '';
+    document.querySelector('#numero-documento').value = '';
+    document.querySelector('#edad').value = '';
+    document.querySelector('#peso').value = '';
+    document.querySelector('#altura').value = '';
+    document.querySelector('#actividad').value = '';
+    document.querySelector('input[name="genero"]:checked').checked = false;
 }
 
 function validarCampos(nombre, numeroDocumento, edad, peso, altura) {
@@ -68,13 +81,13 @@ function calcularValorCalorias(actividad, genero, peso, altura, edad) {
 function mostrarResultado(nombre, documento, numeroDocumento, calcluloCalorias, grupoPoblacional) {
     resultado.innerHTML = `
             <div class="d-flex flex-column justify-content-center align-items-center h-100">
-                <h5>Calorias requeridas</h5>
+                <h4>Calorias requeridas</h4>
                 <input class="text-center form-control resultado" value="${calcluloCalorias} kcal"></input>
                 <br>
-                <p class="text-start w-80">
+                <p class="text-start w-80" style='font-size: 20px;'>
                     El paciente <strong>${nombre}</strong> identificado con <strong>${documento}</strong> NO. <strong>${numeroDocumento}</strong>, requiere un total de <strong>${calcluloCalorias} kcal</strong> para el sostenimiento de su TBM.
                 </p>
-                <p class="text-start w-80" value="${grupoPoblacional}">El paciente pertenece al grupo poblacional 
+                <p class="text-start w-80" style='font-size: 20px;' value="${grupoPoblacional}">El paciente pertenece al grupo poblacional 
                     <strong>${grupoPoblacional}.</strong>
                 </p>
             </div>
